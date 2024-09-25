@@ -11,15 +11,15 @@ driver.get(url)
 
 time.sleep(3)
 
-lights = driver.find_elements(By.CLASS_NAME, 'LlPhw')
+lights = driver.find_elements(By.CLASS_NAME, '_Ud0k')
 
 parsed_data = []
 
 for light in lights:
     try:
         name = light.find_element(By.CSS_SELECTOR, 'span[itemprop="name"]').text
-        price = light.find_element(By.CSS_SELECTOR, 'span.ui-LD-ZU KIkOH').text
-        link = light.find_element(By.CSS_SELECTOR, 'a.ui-GPFV8 qUioe ProductName ActiveProduct').get_attribute('href')
+        price = light.find_element(By.CSS_SELECTOR, 'span.ui-LD-ZU').text
+        link = light.find_element(By.CSS_SELECTOR, 'a.ui-GPFV8.qUioe.ProductName').get_attribute('href')
     except Exception as e:
         print(f"Произошла ошибка при парсинге: {e}")
         continue
